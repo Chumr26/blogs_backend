@@ -4,18 +4,15 @@ import express, {
     type Response,
 } from 'express';
 import morgan from 'morgan';
+import dotenv from 'dotenv';
 
 import route from './routes';
 
 const app = express();
-const port = 3000;
+dotenv.config();
+const port = process.env.PORT;
 
 app.use(morgan('tiny'));
-// Add this error handling middleware
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-    console.error(err.stack);
-    res.status(500).send('Something went wrong');
-});
 // app.use(
 //     express.urlencoded({
 //         extended: true,

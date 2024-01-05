@@ -1,7 +1,10 @@
 import type { Request, Response } from 'express';
 
-function postsController(req: Request, res: Response) {
-    res.send('posts');
+import prisma from '../lib/prismadb';
+
+async function postsController(req: Request, res: Response) {
+    const posts = await prisma.post.findMany();
+    res.json(posts);
 }
 
 export default postsController;

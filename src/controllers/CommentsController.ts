@@ -1,7 +1,10 @@
 import type { Request, Response } from 'express';
 
-function commentsController(req: Request, res: Response) {
-    res.send('comments');
+import prisma from '../lib/prismadb';
+
+async function commentsController(req: Request, res: Response) {
+    const comments = await prisma.comment.findMany();
+    res.json(comments);
 }
 
 export default commentsController;

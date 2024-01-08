@@ -6,7 +6,7 @@
     "scripts": {
         "start": "nodemon src/app.ts",
         "build": "tsc",
-        "serve": "node dist/index.js"
+        "serve": "node dist/src/app.js"
     },
     "prisma": {
         "seed": "ts-node prisma/seed.ts"

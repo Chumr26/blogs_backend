@@ -4,14 +4,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const cors_1 = __importDefault(require("cors"));
+// import cors from 'cors';
 const morgan_1 = __importDefault(require("morgan"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const routes_1 = __importDefault(require("./routes"));
 const app = (0, express_1.default)();
 dotenv_1.default.config();
 const port = process.env.PORT;
-app.use((0, cors_1.default)());
+// app.use(cors());
 app.use((0, morgan_1.default)('tiny'));
 // app.use(
 //     express.urlencoded({
